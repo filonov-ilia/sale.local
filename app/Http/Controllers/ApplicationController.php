@@ -51,6 +51,8 @@ class ApplicationController extends Controller
         $application = Application::create([
             'title' => $request->title,
             'description' => $request->description,
+            'price'=>$request->price,
+            'type_id'=>$request->type_id,
             'category_id' => $request->category_id,
             'user_id' => Auth::id(),
             'photo_before' => $imageName,

@@ -7,12 +7,12 @@
     @csrf
 
     <div class="form__row">
-      <label for="name" class="form__label">
+      <label for="login" class="form__label">
         Логин
       </label>
-      <input type="text" id="name" name="name" class="form__input @error('name') form__input_error @enderror"
-        value="{{ old('name') }}">
-      @error('name')
+      <input type="text" id="login" name="login" class="form__input @error('login') form__input_error @enderror"
+        value="{{ old('login') }}">
+      @error('login')
         <div class="form__message">
           {{ $message }}
         </div>

@@ -22,11 +22,11 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'unique:users'],
+            'name' => ['required'],
             'tel' => ['required'],
-            'login' => ['required'],
+            'login' => ['required', 'unique:users'],
             'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required', 'confirmed', 'min:8'],
+            'password' => ['required'],
             'rules' => ['required'],
         ];
     }
@@ -40,14 +40,11 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name.required' => 'Необходимо ввести имя пользователя',
-            'name.unique' => 'Пользователь с таким логином уже зарегистрирован',
             'tel.required'=> 'Необходимо ввести номер телефона',
             'login.required' =>'Введите логин',
             'email.required' => 'Необходимо ввести email',
             'email.unique' => 'Пользователь с таким email уже зарегистрирован',
             'password.required' => 'Необходимо ввести пароль',
-            'password.confirmed' => 'Пароли не совпадают',
-            'password.min' => 'Пароль должен быть не менее :min символов',
             'rules.required' => 'Необходимо дать согласие на обработку персональных данных',
         ];
     }

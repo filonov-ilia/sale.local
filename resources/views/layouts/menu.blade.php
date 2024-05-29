@@ -21,10 +21,20 @@
   </li>
   {{-- администратор --}}
   @can('admin')
+    <li>
+      <a href="{{ route('applications.index') }}" class="header__link">
+        Панель администратора
+      </a>
+    </li>
   @endcan
 
   {{-- пользователь --}}
   @can('user')
+    <li>
+      <a href="{{ route('applications.index') }}" class="header__link">
+        Кабинет пользователя
+      </a>
+    </li>
   @endcan
 
   {{-- кнопка выход --}}

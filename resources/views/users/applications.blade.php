@@ -50,7 +50,17 @@
           </option>
         @endforelse
 
-      </select>
+        <select id="type_id" name="type_id" class="form__select">
+          @forelse ($types as $types)
+            <option value="{{ $types->id }}">
+              {{ $types->title }}
+            </option>
+          @empty
+            <option disabled selected value="0">
+              Категории не добавлены
+            </option>
+          @endforelse
+        </select>
     </div>
 
     <div class="form__row">

@@ -19,6 +19,7 @@ return new class extends Migration
                 $table->string('title');
                 $table->text('description');
                 $table->integer('price');
+                $table->string('type');
                 $table->string('photo_before');
                 $table->string('photo_after')->nullable();
                 $table->string('status')->default('Новая');

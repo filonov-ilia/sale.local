@@ -23,15 +23,16 @@ class LoginController extends Controller
      */
     public function authenticate(Request $request): RedirectResponse
     {
+
         $credentials = $request->only('login', 'password');
         if (Auth::attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
 
             if (Auth::user()->role == 'admin') {
-                return redirect()->route('welcome');
+                return redirect()->route('applications.index');
             }
             if (Auth::user()->role == 'user') {
-                return redirect()->route('welcome');
+                return redirect()->route('applications.index');
             }
             return redirect()->intended('/');
         }

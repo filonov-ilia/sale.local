@@ -7,12 +7,12 @@
     @csrf
 
     <div class="form__row">
-      <label for="fio" class="form__label">
+      <label for="name" class="form__label">
         ФИО
       </label>
-      <input type="text" id="fio" name="fio" class="form__input @error('fio') form__input_error @enderror"
-        value="{{ old('fio') }}">
-      @error('fio')
+      <input type="text" id="name" name="name" class="form__input @error('name') form__input_error @enderror"
+        value="{{ old('name') }}">
+      @error('name')
         <div class="form__message">
           {{ $message }}
         </div>
@@ -23,7 +23,7 @@
       <label for="tel" class="form__label">
         Телефон
       </label>
-      <input type="number" id="tel" name="name" class="form__input @error('tel') form__input_error @enderror"
+      <input type="number" id="tel" name="tel" class="form__input @error('tel') form__input_error @enderror"
         value="{{ old('tel') }}">
       @error('tel')
         <div class="form__message">

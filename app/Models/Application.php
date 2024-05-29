@@ -21,4 +21,9 @@ class Application extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function type(): BelongsTo
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
