@@ -1,0 +1,50 @@
+.main {
+    grid-area: main;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+    grid-template-rows: 40px 1fr;
+    align-content: start;
+    row-gap: 20px;
+
+    &__title {
+        grid-column: 2 / 3;
+
+        background: rgba(0, 0, 0, 0.108);
+        color: #000000;
+        padding: 10px;
+        border-radius: 5px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    &__form {
+        grid-column: 2 / 3;
+        // по центру блока
+        align-self: start;
+        justify-self: center;
+    }
+
+    &__section {
+        grid-column: 2 / 3;
+        // по центру блока
+        align-self: start;
+        justify-self: center;
+    }
+
+    &__problem {
+        grid-column: 2 / 3;
+        // по центру блока
+        align-self: start;
+    }
+
+    &__panel {
+        grid-column: 2 / 3;
+        align-self: start;
+    }
+
+    &__category {
+        grid-column: 2 / 3;
+        align-self: start;
+    }
+}

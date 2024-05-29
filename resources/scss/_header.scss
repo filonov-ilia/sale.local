@@ -1,0 +1,77 @@
+/* шапка */
+.header {
+    grid-area: header;
+    display: grid;
+    /* 1 ряд на всю высоту */
+    grid-template-rows: 1fr;
+    /* ограничивающий контейнер */
+    /* отступ - логотип (мах 300) - меню (мах 1100) - отступ */
+    /* общая ширина 300+1100 = 1400 */
+    grid-template-columns: 1fr minmax(auto, 200px) minmax(auto, 1000px) 1fr;
+    /* центрируем элементы */
+    align-items: center;
+    border-bottom: 2px solid lightgrey;
+    box-shadow: 0px 3px 3px 0px rgba(34, 60, 80, 0.2);
+    background-color: #4596e2;
+    /* липкий хедер */
+    position: sticky;
+    /* Липкое позиционирование */
+    top: 0;
+    /* Положение сверху */
+    z-index: 500;
+
+    &__logo {
+        /* width: 70px; */
+        height: 70px;
+        /* border-radius: 50%; */
+        /* background-color: rgba(176, 176, 177, 0.7); */
+        /* размещаем логотип в нужной ячейкке  */
+        grid-column: 2 / 3;
+    }
+
+    &__menu {
+        /* размещаем меню в нужной ячейкке  */
+        grid-column: 3 / 4;
+    }
+
+    &__list {
+        display: grid;
+        /* автоматическое заполнение пунктов */
+        grid-auto-flow: column;
+        /* выравнивание элементов по левому краю */
+        justify-items: end;
+        /* выравниваем в бок */
+        justify-content: end;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &__link {
+        color: #fff;
+
+        font-size: 14px;
+        text-decoration: none;
+
+        background-color: #006caa;
+        transition: 0.3s;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #006caa;
+    }
+
+    &__link:hover {
+        color: #000000;
+        border-radius: 15px;
+
+        background-color: #d1d1d1;
+        border: 1px solid #000000;
+        transition: 0.4s;
+    }
+
+    &__link_active {
+        color: #009688;
+
+        background-color: #fff;
+        border: 1px solid #009688;
+    }
+}

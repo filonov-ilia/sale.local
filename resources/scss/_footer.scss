@@ -1,0 +1,18 @@
+.footer {
+    grid-area: footer;
+
+    border-top: 2px solid lightgrey;
+    background-color: #4596e2;
+    color: rgb(39, 39, 39);
+    padding: 15px;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+    align-items: center;
+    justify-items: center;
+
+    &__copy {
+        grid-column: 2 / 3;
+    }
+}
