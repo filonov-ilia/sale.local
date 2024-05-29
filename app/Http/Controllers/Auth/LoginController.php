@@ -28,15 +28,15 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             if (Auth::user()->role == 'admin') {
-                return redirect()->route('applications.index');
+                return redirect()->route('welcome');
             }
             if (Auth::user()->role == 'user') {
-                return redirect()->route('applications.index');
+                return redirect()->route('welcome');
             }
             return redirect()->intended('/');
         }
         return back()->withErrors([
             'login' => 'Пользователя с таким логином\паролем не существует',
-        ])->onlyInput('name');
+        ])->onlyInput('login');
     }
 }

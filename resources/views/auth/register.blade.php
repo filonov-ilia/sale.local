@@ -87,8 +87,7 @@
     <div class="form__row">
       <label for="rules" class="form__label">
         <input type="checkbox" id="rules" name="rules"
-          class="form__checkbox @error('rules') form__input_error @enderror"
-          @if (old('rules') == 'on') "checked" @endif>
+          class="form__checkbox @error('rules') form__input_error @enderror" @if (old('rules') == 'on')  @endif>
         Согласие на обработку персональных данных
       </label>
       @error('rules')
