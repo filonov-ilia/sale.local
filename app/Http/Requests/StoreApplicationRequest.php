@@ -24,7 +24,6 @@ class StoreApplicationRequest extends FormRequest
         return [
             'title' => ['required'],
             'description' => ['required'],
-            'price' => ['required'],
             'category_id' => ['required'],
             'photo_before' => ['required', 'image', 'max:10240'],
         ];
@@ -35,7 +34,6 @@ class StoreApplicationRequest extends FormRequest
         return [
             'title.required' => 'Введите название заявки',
             'description.required' => 'Введите описание заявки',
-            'price.required' => 'Введите сумму',
             'category_id.required' => 'Выберите категорию заявки',
             'photo_before.required' => 'Прикрепите фотографию проблемы',
             'photo_before.image' => 'Файл должен быть изображением',

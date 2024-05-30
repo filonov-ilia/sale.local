@@ -13,7 +13,7 @@
 
   <header class="header">
     <a href="{{ route('welcome') }}" class="header__logo">
-      <img src="{{ asset('images/logo.png') }}" alt="Sale" height="80px">
+      <img src="{{ asset('images/logo2.svg') }}" alt="Sale" height="80px">
     </a>
     <nav class="header__menu">
       <ul class="header__list">

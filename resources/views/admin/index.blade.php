@@ -2,9 +2,6 @@
 
 @section('content')
   {{--  --}}
-  <h2 class="main__title">
-    Панель администратора
-  </h2>
 
   <section class="main__panel panel">
 
@@ -23,9 +20,9 @@
         </label>
         <select id="filter_status" class="form__select">
           <option>Все статусы</option>
-          <option>Новая</option>
-          <option>Решена</option>
-          <option>Отклонена</option>
+          <option>Модерация</option>
+          <option>Опубликовано</option>
+          <option>Отклонено</option>
         </select>
       </div>
 
@@ -65,7 +62,7 @@
             <p class="problem__category"> {{ $application->category->title }} </p>
             <p class="problem__time"> {{ $application->created_at }} </p>
             <p class="problem__status"> {{ $application->status }} </p>
-            @if ($application->status == 'Новая')
+            @if ($application->status == 'Модерация')
               <a href="{{ route('applications.edit', $application->id) }}" class="problem__link">
                 Изменить статус
               </a>

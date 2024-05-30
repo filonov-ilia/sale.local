@@ -52,7 +52,6 @@ class ApplicationController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'price'=>$request->price,
-            'type_id'=>$request->type_id,
             'category_id' => $request->category_id,
             'user_id' => Auth::id(),
             'photo_before' => $imageName,
@@ -88,7 +87,7 @@ class ApplicationController extends Controller
         $application = Application::findOrFail($id);
         $application->status = $request->status;
 
-        if ($request->status == 'Решена') {
+        if ($request->status == 'Модерация') {
             // Загрузка изображения
             $image = $request->file('photo_after');
             // Имя изображения
@@ -99,7 +98,7 @@ class ApplicationController extends Controller
             $application->photo_after = $imageName;
         }
 
-        if ($request->status == 'Отклонена') {
+        if ($request->status == 'Отклонено') {
             // добавление причины откза в БД
             $application->reason = $request->reason;
         }

@@ -2,7 +2,6 @@
 
 @section('content')
   <!--Форма Категории заявок-->
-  <h2 class="main__title">Категории заявок</h2>
   <form class="main__form form" action="{{ route('categories.store') }}" method="post">
     @csrf
 

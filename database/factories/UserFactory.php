@@ -62,8 +62,8 @@ class UserFactory extends Factory
     public function user(): static
     {
         return $this->state(fn (array $attributes) => [
-            'login' => 'user',
-            'email' => 'user@user.net',
+            'login' => 'user1',
+            'email' => 'user1@user1.net',
             'email_verified_at' => now(),
             'password' => Hash::make('user12345'),
             'role' => 'user',

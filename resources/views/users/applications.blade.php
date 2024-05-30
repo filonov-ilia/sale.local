@@ -2,9 +2,6 @@
 
 @section('content')
   <!--Форма регистрации-->
-  <h2 class="main__title">
-    Создание заявки
-  </h2>
 
   <form class="main__form form" action="{{ route('applications.store') }}" method="post" enctype="multipart/form-data">
     @csrf
@@ -49,31 +46,37 @@
             Категории не добавлены
           </option>
         @endforelse
-
-        <select id="type_id" name="type_id" class="form__select">
-          @forelse ($types as $types)
-            <option value="{{ $types->id }}">
-              {{ $types->title }}
-            </option>
-          @empty
-            <option disabled selected value="0">
-              Категории не добавлены
-            </option>
-          @endforelse
-        </select>
     </div>
 
     <div class="form__row">
-      <label for="photo_before" class="form__label">
-        Фотография проблемы
+      <label for="type" class="form__label">
+        Тип
       </label>
-      <input type="file" id="photo_before" name="photo_before"
-        class="form__input @error('photo_before') form__input_error @enderror" accept="image/*">
-      @error('photo_before')
+      <select name="type" class="form__select">
+        <option value="1">Новая</option>
+        <option value="2">Б/У</option>
+      </select>
+    </div>
+    <div class="form__row">
+      <input type="number" id="price" name="price" class="form__input @error('price') form__input_error @enderror"
+        placeholder="Цена">
+      @error('price')
         <div class="form__message">
           {{ $message }}
         </div>
       @enderror
+    </div>
+
+    <label for="photo_before" class="form__label">
+      Фотография проблемы
+    </label>
+    <input type="file" id="photo_before" name="photo_before"
+      class="form__input @error('photo_before') form__input_error @enderror" accept="image/*">
+    @error('photo_before')
+      <div class="form__message">
+        {{ $message }}
+      </div>
+    @enderror
     </div>
 
     <button type="submit" class="form__button">

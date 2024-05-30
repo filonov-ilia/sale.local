@@ -7,23 +7,23 @@
 
     &__item {
         display: grid;
-        grid-template-rows:
-            auto minmax(40px, 1fr) minmax(40px, 1fr) minmax(40px, 1fr);
+        grid-template-rows: auto minmax(40px, 1fr) minmax(40px, 1fr) minmax(
+                40px,
+                1fr
+            );
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
 
         align-content: start;
         justify-content: center;
 
-        border: 1px solid #009688;
+        border: 1px solid #4596e2;
         background-color: #fff;
     }
 
     &__image {
         position: relative;
         padding: 0px 0px 85% 0px;
-
-        overflow: hidden;
 
         img {
             position: absolute;
@@ -32,27 +32,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        & .photo_before {
-            // скрыть изображение
-            display: none;
-        }
-
-        // при наведении на контейнер
-        &:hover .photo_before {
-            // показать
-            display: block;
-            // анимация
-            animation-name: up;
-            animation-duration: 2s;
-            transform: scale(1.5);
-        }
-
-        // при наведении на контейнер
-        &:hover .photo_after {
-            // скрыть
-            display: none;
         }
 
         @keyframes up {
@@ -82,7 +61,7 @@
 
     &__category {
         justify-self: start;
-        background-color: #009688;
+        background-color: #4596e2;
         color: #fff;
         padding: 10px;
         border-radius: 0px 20px 20px 0px;
@@ -92,12 +71,12 @@
         justify-self: center;
         align-self: end;
         padding: 5px;
-        color: grey;
+        color: rgb(0, 0, 0);
     }
 
     &__link {
         @include button;
-        margin: 10px;
+        margin: 25px;
         text-align: center;
     }
 
@@ -105,7 +84,7 @@
         justify-self: center;
         align-self: end;
         padding: 10px;
-        background-color: #f2f2f2;
+        background-color: #51abff;
         border-radius: 5px;
     }
 
@@ -120,10 +99,5 @@
             color: #b80000;
             cursor: pointer;
         }
-
-
     }
-
-
-
 }

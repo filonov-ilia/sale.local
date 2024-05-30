@@ -2,9 +2,6 @@
 
 @section('content')
   {{-- --}}
-  <h2 class="main__title">
-    Личный кабинет
-  </h2>
 
   <section class="main__panel panel">
 
@@ -23,9 +20,9 @@
         </label>
         <select id="filter_status" class="form__select">
           <option>Все статусы</option>
-          <option>Новая</option>
-          <option>Решена</option>
-          <option>Отклонена</option>
+          <option>Модерация</option>
+          <option>Опубликовано</option>
+          <option>Отклонено</option>
         </select>
       </div>
 
